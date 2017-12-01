@@ -21,6 +21,20 @@ def order
   end
 end
 
+  def play_again?
+    puts "Do you want to play again?"
+    puts "Enter yes or no"
+    play_again = gets.chomp
+    if play_again == "yes"
+      self.run
+    elsif play_again == "no"
+      puts "Ok, thanks for playing. Bye!"
+    else
+      self.play_again
+    end
+  end
+
+
   def run
     puts "Welcome to Elle's Tic Tac Totally Awesome Game"
     puts "Do you want to play 0, 1, or 2 players?"
