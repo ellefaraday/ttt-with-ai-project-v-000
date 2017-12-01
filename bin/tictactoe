@@ -1,3 +1,33 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+class CLI
+  attr_reader :player_1, :player_2
+
+def order
+  puts "Who should go first (Xs) you or the computer?"
+  puts "Enter me or computer"
+  who_first = gets.chomp
+  if who_first == "me"
+    @player_1 = Players::Human.new("X")
+    @player_2 = Players::Computer.new("O")
+  elsif who_first == "computer"
+    @player_1 = Players::Computer.new("X")
+    @player_2 = Players::Human.new("O")
+  else
+    order
+  end
+end
+
+  def run
+    puts "Welcome to Elle's Tic Tac Totally Awesome Game"
+    puts "Do you want to play 0, 1, or 2 players?"
+    puts "Enter 0, 1, or 2"
+    player_number = gets.chomp
+
+    if player_number == "0"
+      player_1 = Players::Computer.new("X")
+      player_2 = Players::Computer.new("O")
+      Game.new(player_1, player_2).play
+    elsif player_number == "1"
+      order
