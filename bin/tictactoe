@@ -46,5 +46,6 @@ end
       self.run
     end
   end
+end
 
 Cli.new.run
