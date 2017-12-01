@@ -28,9 +28,21 @@ end
     player_number = gets.chomp
 
     if player_number == "0"
+      puts "Computer 1 will play as Xs"
+      puts "Computer 2 will plays as Os"
       @player_1 = Players::Computer.new("X")
       @player_2 = Players::Computer.new("O")
       Game.new(@player_1, @player_2).play
     elsif player_number == "1"
       self.order
       Game.new(@player_1, @player_2).play
+    elsif player_number == "2"
+      puts "Player 1 will play as Xs"
+      puts "Player 2 will play as Os"
+      @player_1 = Players::Human.new("X")
+      @player_2 = Players::Human.new("O")
+      Game.new(@player_1, @player_2).play
+    else
+      self.run
+    end
+  end
