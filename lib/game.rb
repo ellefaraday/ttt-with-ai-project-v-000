@@ -74,7 +74,7 @@ def turn
  puts "Please enter 1-9:"
 
    input = self.current_player.move(@board)
-   
+
 
    if @board.valid_move?(input) == true
      @board.update(input, self.current_player)
@@ -82,6 +82,20 @@ def turn
    else
      turn
    end
+ end
+
+ def play
+   puts "Welcome to Tic Tac Toe!"
+   @board.display
+   until self.over? == true
+       self.turn
+   end
+   if self.won? != false
+       puts "Congratulations #{self.winner}!"
+   else
+       puts "Cat's Game!"
+   end
+
  end
 
 end
