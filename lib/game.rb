@@ -85,7 +85,7 @@ def turn
  end
 
  def play
-   puts "Welcome to Tic Tac Toe!"
+   puts "Begin Tic Tac Toe!"
    @board.display
    until self.over? == true
        self.turn
