@@ -30,7 +30,7 @@ end
     elsif play_again == "no"
       puts "Ok, thanks for playing. Bye!"
     else
-      self.play_again
+      self.play_again?
     end
   end
 
@@ -47,18 +47,18 @@ end
       @player_1 = Players::Computer.new("X")
       @player_2 = Players::Computer.new("O")
       Game.new(@player_1, @player_2).play
-      self.play_again
+      self.play_again?
     elsif player_number == "1"
       self.order
       Game.new(@player_1, @player_2).play
-      self.play_again
+      self.play_again?
     elsif player_number == "2"
       puts "Player 1 will play as Xs"
       puts "Player 2 will play as Os"
       @player_1 = Players::Human.new("X")
       @player_2 = Players::Human.new("O")
       Game.new(@player_1, @player_2).play
-      self.play_again
+      self.play_again?
     else
       self.run
     end
